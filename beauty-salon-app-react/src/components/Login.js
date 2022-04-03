@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 function Login() {
   const inputRef = useRef(null);
@@ -11,14 +11,38 @@ function Login() {
   return (
     <div>
       <h1>Login</h1>
-      <div>
-        <label>Username </label>
-        <input ref={inputRef} type='text' />
-      </div>
-      <div>
-        <label>Password </label>
-        <input type='text' />
-      </div>
+      <form action='action_page.php' method='post'>
+        <div>
+          <label htmlFor='uname'>
+            <b>Username</b>
+          </label>
+          <input
+            ref={inputRef}
+            type='text'
+            placeholder='Enter Username'
+            name='uname'
+            required
+          />
+          <div>
+            <label htmlFor='psw'>
+              <b>Password</b>
+            </label>
+            <input
+              type='password'
+              placeholder='Enter Password'
+              name='psw'
+              required
+            />
+          </div>
+          <button type='button'>Cancel</button>
+          <button type='submit'>Login</button>
+        </div>
+        <div>
+          <span>
+            Forgot <a href='#'>password?</a>
+          </span>
+        </div>
+      </form>
     </div>
   );
 }
