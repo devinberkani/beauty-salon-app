@@ -1,48 +1,69 @@
-import React, { useEffect, useRef, useState } from 'react';
+//Login logic
+
+import React, { useState } from 'react';
+import LoginForm from './LoginForm';
 
 function Login() {
-  const inputRef = useRef(null);
+  //test login information
+  const adminUser = {
+    name: 'Devin',
+    email: 'admin@admin.com',
+    password: 'admin123',
+  };
 
-  useEffect(() => {
-    // focus the input element
-    inputRef.current.focus();
-  }, []);
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+  });
+
+  //catch if details are incorrect
+  const [error, setError] = useState('');
+
+  //takes details from login form
+  const Login = (details) => {
+    console.log(details);
+
+    if (
+      details.email === adminUser.email &&
+      details.password === adminUser.password
+    ) {
+      console.log('Logged in');
+
+      //set user details to pass login conditionals
+      setUser({
+        name: details.name,
+        email: details.email,
+      });
+    } else {
+      console.log('Details do not match');
+      setError('Username and password do not match');
+    }
+  };
+
+  //logout function
+  const Logout = () => {
+    console.log('Logged out');
+
+    //set user back to default value
+    setUser({
+      name: '',
+      email: '',
+    });
+  };
 
   return (
     <div>
-      <h1>Login</h1>
-      <form action='action_page.php' method='post'>
+      {/* conditions for being logged in */}
+      {user.email != '' ? (
         <div>
-          <label htmlFor='uname'>
-            <b>Username</b>
-          </label>
-          <input
-            ref={inputRef}
-            type='text'
-            placeholder='Enter Username'
-            name='uname'
-            required
-          />
-          <div>
-            <label htmlFor='psw'>
-              <b>Password</b>
-            </label>
-            <input
-              type='password'
-              placeholder='Enter Password'
-              name='psw'
-              required
-            />
-          </div>
-          <button type='button'>Cancel</button>
-          <button type='submit'>Login</button>
+          <h2>
+            Welcome, <span>{user.name}</span>
+          </h2>
+          <button onClick={Logout}>Logout</button>
         </div>
-        <div>
-          <span>
-            Forgot <a href='#'>password?</a>
-          </span>
-        </div>
-      </form>
+      ) : (
+        <LoginForm Login={Login} error={error} />
+      )}
     </div>
   );
 }
