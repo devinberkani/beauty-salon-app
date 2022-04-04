@@ -1,15 +1,13 @@
-//Login logic
-
 import React, { useState } from 'react';
-import LoginForm from './LoginForm';
+import CreateAccountForm from './CreateAccountForm';
 import NavbarLoggedOut from './NavbarLoggedOut';
 
-function Login() {
-  //test login information
+function CreateAccount() {
+  //setting initial user object
   const adminUser = {
-    name: 'Devin',
-    email: 'admin@admin.com',
-    password: 'admin123',
+    name: '',
+    email: '',
+    password: '',
   };
 
   const [user, setUser] = useState({
@@ -21,23 +19,24 @@ function Login() {
   const [error, setError] = useState('');
 
   //takes details from login form
-  const Login = (details) => {
+  const CreateAccount = (details) => {
     console.log(details);
 
-    if (
-      details.name === adminUser.name &&
-      details.email === adminUser.email &&
-      details.password === adminUser.password
-    ) {
-      console.log('Logged in');
-      //set user details to pass login conditionals
+    if (details.name != '' && details.email != '' && details.password != '') {
+      console.log('Account Created');
+      alert(
+        `Congratulations, ${details.name}! Your confirmation email has been sent to ${details.email}, your password has been set to ${details.password}.`
+      );
+      console.log('Logged In');
+
+      //set user details to pass conditionals in jsx below after account created
       setUser({
         name: details.name,
         email: details.email,
       });
     } else {
-      console.log('Login information does not match');
-      setError('Login information does not match');
+      console.log('Please fill out all fields');
+      setError('Please fill out all fields');
     }
   };
 
@@ -45,7 +44,7 @@ function Login() {
   const Logout = () => {
     console.log('Logged out');
 
-    //set user back to default value
+    //set user back to default value after logged out
     setUser({
       name: '',
       email: '',
@@ -67,11 +66,11 @@ function Login() {
       ) : (
         <div>
           <NavbarLoggedOut />
-          <LoginForm Login={Login} error={error} />
+          <CreateAccountForm CreateAccount={CreateAccount} error={error} />
         </div>
       )}
     </div>
   );
 }
 
-export default Login;
+export default CreateAccount;

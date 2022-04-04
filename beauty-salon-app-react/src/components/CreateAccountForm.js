@@ -1,9 +1,9 @@
-//Login form
+//Create Account form
 
 import React, { useState } from 'react';
 
-function LoginForm({ Login, error }) {
-  //details to be sent to Login function
+function CreateAccountForm({ CreateAccount, error }) {
+  //details to be sent to CreateAccount function
   const [details, setDetails] = useState({
     name: '',
     email: '',
@@ -13,14 +13,14 @@ function LoginForm({ Login, error }) {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    Login(details);
+    CreateAccount(details);
   };
 
   return (
     //calls submitHandler on submit
     <form onSubmit={submitHandler}>
       <div className='form-inner'>
-        <h2>Login</h2>
+        <h2>Create Your Account</h2>
         {error != '' ? <div className='error'>{error}</div> : ''}
         <div className='form-group'>
           <label htmlFor='name'>Name:</label>
@@ -53,11 +53,11 @@ function LoginForm({ Login, error }) {
               value={details.password}
             />
           </div>
-          <input type='submit' value='Login' />
+          <input type='submit' value='Sign Up' />
         </div>
       </div>
     </form>
   );
 }
 
-export default LoginForm;
+export default CreateAccountForm;
