@@ -7,7 +7,7 @@ const ClientSearch = () => {
       <div className='client-search'>
         <label className='client-search-label'>Search For Client</label>
         <input className='client-search-input' type='text' />
-        <button className='client-search-btn'>Search</button>
+        <button className='btn'>Search</button>
       </div>
       <div className='client-list'>
         <ClientList />

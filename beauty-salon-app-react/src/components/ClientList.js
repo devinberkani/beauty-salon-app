@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import data from '../data';
-import SingleClient from './SingleClient';
+import { useGlobalContext } from './context';
+import SingleClientModal from './SingleClientModal';
 
 const ClientList = () => {
+  const { openModal } = useGlobalContext();
+
   return (
     <div>
       <h2>Client List</h2>
@@ -23,6 +26,11 @@ const ClientList = () => {
                 </td>
                 <td>{client.phone}</td>
                 <td>{client.address}</td>
+                <td>
+                  <button className='btn' onClick={openModal}>
+                    More Info
+                  </button>
+                </td>
               </tr>
             );
           })}
