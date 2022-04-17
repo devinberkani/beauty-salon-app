@@ -7,16 +7,67 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* NAVIGATION */
 
 nav {
-  background-color: aliceblue;
+  background: #ececec;
   padding: 16px 32px;
 }
 
-nav a {
+nav li {
+  display: inline-block;
   margin-right: 16px;
+}
+
+/* CLIENT SEARCH */
+
+.client-search {
+  background: #ececec;
+  text-align: center;
+  margin: 2em;
+  padding: 2em;
+}
+
+.client-search-label {
+  font-weight: 500;
+}
+
+.client-search-input {
+  margin: 0.5em;
+}
+
+.client-search-btn {
+  text-transform: uppercase;
+  font-weight: bold;
+  background: #000000;
+  color: white;
+}
+
+/* CLIENT LIST */
+
+.client-list {
+  text-align: center;
+}
+
+/* CLIENT LIST TABLE */
+
+.client-table {
+  display: inline-block;
+}
+
+table,
+th,
+td {
+  border: 1px solid #000000;
+}
+
+table {
+  margin: 1em;
+}
+
+th,
+td {
+  padding: 0.25em;
+  padding-right: 1em;
+  padding-left: 1em;
 }
