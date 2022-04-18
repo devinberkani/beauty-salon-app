@@ -181,6 +181,7 @@ Landing Page
   background: var(--clr-white);
   position: relative;
   height: 40vh;
+  min-height: 350px;
   width: 60vw;
   max-width: 500px;
   left: 50%;

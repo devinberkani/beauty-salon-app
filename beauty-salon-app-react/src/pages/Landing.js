@@ -7,10 +7,9 @@ const Landing = () => {
       <section className='landing-page-container'>
         <section className='landing-page-container-children'>
           <section>
-            <h2 className='landing-page-logo'>Beauty Salon Portal</h2>
+            <h2 className='landing-page-logo'>Client Manager</h2>
             <p>
-              Where salon professionals come to do all the things with the stuff
-              and the hair.
+              Where professionals come to manage clients and do all the things.
             </p>
           </section>
           <section>

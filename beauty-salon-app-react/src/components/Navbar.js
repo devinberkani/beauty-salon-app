@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav>
         <ul>
           <div>
-            <li className='logo'>Salon Portal</li>
+            <li className='logo'>Client Manager</li>
           </div>
           <Link to='/'>
             <li className='link'>Logout</li>
