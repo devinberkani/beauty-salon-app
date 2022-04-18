@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import LogoutButton from './LogoutButton';
+import WelcomeUser from './WelcomeUser';
 
 const Navbar = () => {
   return (
@@ -9,9 +10,8 @@ const Navbar = () => {
           <div>
             <li className='logo'>Client Manager</li>
           </div>
-          <Link to='/'>
-            <li className='link'>Logout</li>
-          </Link>
+          <WelcomeUser />
+          <LogoutButton />
         </ul>
       </nav>
     </div>

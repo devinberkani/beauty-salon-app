@@ -9,13 +9,17 @@ import { Auth0Provider } from '@auth0/auth0-react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Auth0Provider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <Auth0Provider
+      domain='dev-auuzgaco.us.auth0.com'
+      clientId='lep5CcfvySUzBhnr1Zskb3Fktvsc6sSb'
+      redirectUri='http://localhost:3000/dashboard'
+    >
       <AppProvider>
         <App />
       </AppProvider>
-    </BrowserRouter>
-  </Auth0Provider>
+    </Auth0Provider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
