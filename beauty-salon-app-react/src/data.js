@@ -10,6 +10,7 @@ const data = [
     email: 'john@john.com',
     birthday: 'January 8',
     hairColorInfo: '',
+    specialEvents: 'special event',
   },
   {
     name: {
@@ -22,6 +23,7 @@ const data = [
     email: 'sally@sally.com',
     birthday: 'March 28',
     hairColorInfo: 'R69 Red',
+    specialEvents: 'special event',
   },
   {
     name: {
@@ -34,6 +36,7 @@ const data = [
     email: 'jill@jill.com',
     birthday: 'March 28',
     hairColorInfo: 'B27 Brown',
+    specialEvents: 'special event',
   },
   {
     name: {
@@ -46,6 +49,7 @@ const data = [
     email: 'bill@bill.com',
     birthday: 'July 7',
     hairColorInfo: '',
+    specialEvents: 'special event',
   },
 ];
 

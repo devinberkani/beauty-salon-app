@@ -6,8 +6,16 @@ const ViewClientModal = ({}) => {
   const { showViewModal, closeViewModal, clientInfo, openEditModal } =
     useGlobalContext();
 
-  const { name, id, phone, address, email, birthday, hairColorInfo } =
-    clientInfo;
+  const {
+    name,
+    id,
+    phone,
+    address,
+    email,
+    birthday,
+    hairColorInfo,
+    specialEvents,
+  } = clientInfo;
 
   return (
     <div className={`modal-overlay ${showViewModal && 'show-modal'}`}>
@@ -33,6 +41,11 @@ const ViewClientModal = ({}) => {
           {hairColorInfo ? (
             <li>
               <span className='bold'>Hair Color Info:</span> {hairColorInfo}
+            </li>
+          ) : null}
+          {specialEvents ? (
+            <li>
+              <span className='bold'>Special Events:</span> {specialEvents}
             </li>
           ) : null}
         </ul>

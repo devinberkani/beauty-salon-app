@@ -5,8 +5,16 @@ import data from '../data';
 const EditClientModal = ({}) => {
   const { showEditModal, closeEditModal, clientInfo } = useGlobalContext();
 
-  const { name, id, phone, address, email, birthday, hairColorInfo } =
-    clientInfo;
+  const {
+    name,
+    id,
+    phone,
+    address,
+    email,
+    birthday,
+    hairColorInfo,
+    specialEvents,
+  } = clientInfo;
 
   return (
     <div className={`modal-overlay ${showEditModal && 'show-modal'}`}>
@@ -40,7 +48,14 @@ const EditClientModal = ({}) => {
           {/* only show hairColorInfo if client has it */}
           {hairColorInfo ? (
             <li>
-              <span className='bold'>Hair Color Info:</span> {hairColorInfo}
+              <span className='bold'>Hair Color Info:</span>
+              <input type='text' value={hairColorInfo} readOnly={true} />
+            </li>
+          ) : null}
+          {specialEvents ? (
+            <li>
+              <span className='bold'>Special Events:</span>
+              <input type='text' value={specialEvents} readOnly={true} />
             </li>
           ) : null}
         </ul>
