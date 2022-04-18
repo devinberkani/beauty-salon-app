@@ -35,6 +35,18 @@ const data = [
     birthday: 'March 28',
     hairColorInfo: 'B27 Brown',
   },
+  {
+    name: {
+      firstName: 'Bill',
+      lastName: 'Davis',
+    },
+    id: 4,
+    address: '69 Wigwartz Way, Sebastien, MI 54957',
+    phone: '102-305-4867',
+    email: 'bill@bill.com',
+    birthday: 'July 7',
+    hairColorInfo: '',
+  },
 ];
 
 export default data;

@@ -1,16 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
-import ClientSearch from './components/ClientSearch';
-import EditClientModal from './components/EditClientModal';
-import Navbar from './components/Navbar';
-import ViewClientModal from './components/ViewClientModal';
+import Dashboard from './components/Dashboard';
+import Landing from './pages/Landing';
 
 function App() {
   return (
     <div>
-      <EditClientModal />
-      <ViewClientModal />
-      <Navbar />
-      <ClientSearch />
+      <Routes>
+        <Route path='/' element={<Landing />} />
+        <Route path='dashboard' element={<Dashboard />} />
+      </Routes>
     </div>
   );
 }

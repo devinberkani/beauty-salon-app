@@ -167,7 +167,62 @@ Button Styles
 
 /*
 =============== 
-Navigation
+Landing Page
+===============
+*/
+
+.landing-page {
+  text-align: center;
+  height: 100vh;
+  background: var(--clr-grey-10);
+}
+
+.landing-page-container {
+  background: var(--clr-white);
+  position: relative;
+  height: 40vh;
+  width: 60vw;
+  max-width: 500px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  box-shadow: var(--dark-shadow);
+  border-radius: var(--radius);
+}
+
+.landing-page-container-children {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 1.5em;
+}
+
+.landing-page-logo {
+  font-size: 3em;
+}
+
+.landing-page-btn {
+  text-transform: uppercase;
+  background: #76b947;
+  border: 2px solid #76b947;
+  color: var(--clr-white);
+  font-weight: bold;
+  padding: 0.4rem 0.85rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-size: 0.75rem;
+  cursor: pointer;
+  box-shadow: var(--dark-shadow);
+  border-radius: var(--radius);
+  margin: 0.75rem;
+}
+
+/*
+=============== 
+Dashboard Navigation
 ===============
 */
 
@@ -181,11 +236,27 @@ nav {
 nav li {
   display: inline-block;
   margin-right: 16px;
+  color: var(--clr-white);
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 .logo {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   font-weight: bold;
+}
+
+/*
+=============== 
+Welcome
+===============
+*/
+
+.welcome {
+  text-align: center;
+  margin: 2em;
 }
 
 /*
@@ -212,6 +283,13 @@ Client Search
 .client-search-input {
   margin: 0.5em;
   height: 27px;
+}
+
+.client-search-input:focus {
+  margin: 0.5e;
+  height: 27px;
+  border: 2px solid rgba(118, 185, 71, 1);
+  outline: none;
 }
 
 /*
@@ -243,7 +321,7 @@ Client List Table
 
 th,
 td {
-  border: 1px solid #cccccc;
+  border: 1px solid var(--clr-grey-10);
   padding-right: 0.5em;
   padding-left: 0.5em;
 }
