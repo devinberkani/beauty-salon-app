@@ -1,9 +1,11 @@
 import React, { useState, useContext } from 'react';
+import data from '../data';
 
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [showModal, setshowModal] = useState(false);
+  const [user, setUser] = useState('');
 
   const openModal = () => {
     setshowModal(true);
@@ -19,6 +21,8 @@ const AppProvider = ({ children }) => {
         showModal,
         openModal,
         closeModal,
+        user,
+        setUser,
       }}
     >
       {children}
