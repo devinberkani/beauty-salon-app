@@ -14,7 +14,7 @@ const ViewClientModal = ({}) => {
     email,
     birthday,
     hairColorInfo,
-    specialEvents,
+    clientEvent,
   } = clientInfo;
 
   return (
@@ -43,10 +43,13 @@ const ViewClientModal = ({}) => {
               <span className='bold'>Hair Color Info:</span> {hairColorInfo}
             </li>
           ) : null}
-          {specialEvents ? (
-            <li>
-              <span className='bold'>Special Events:</span> {specialEvents}
-            </li>
+          {clientEvent ? (
+            <span>
+              <li>
+                <span className='bold'>Client Event:</span>
+                {` ${clientEvent.event} on ${clientEvent.date}`}
+              </li>
+            </span>
           ) : null}
         </ul>
         <div className='btn-container'>

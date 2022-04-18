@@ -280,6 +280,23 @@ nav li {
 
 /*
 =============== 
+Client Events
+===============
+*/
+
+.client-events {
+  text-align: center;
+  background: white;
+  padding: 1em;
+  width: 80%;
+  margin: 2em auto;
+  box-shadow: var(--dark-shadow);
+  width: 75vw;
+  max-width: 620px;
+}
+
+/*
+=============== 
 Client Search
 ===============
 */

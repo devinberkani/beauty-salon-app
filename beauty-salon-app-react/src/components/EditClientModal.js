@@ -13,7 +13,7 @@ const EditClientModal = ({}) => {
     email,
     birthday,
     hairColorInfo,
-    specialEvents,
+    clientEvent,
   } = clientInfo;
 
   return (
@@ -52,11 +52,17 @@ const EditClientModal = ({}) => {
               <input type='text' value={hairColorInfo} readOnly={true} />
             </li>
           ) : null}
-          {specialEvents ? (
-            <li>
-              <span className='bold'>Special Events:</span>
-              <input type='text' value={specialEvents} readOnly={true} />
-            </li>
+          {clientEvent ? (
+            <span>
+              <li>
+                <span className='bold'>Client Event:</span>
+                <input type='text' value={clientEvent.event} readOnly={true} />
+              </li>
+              <li>
+                <span className='bold'>Client Event Date:</span>
+                <input type='text' value={clientEvent.date} readOnly={true} />
+              </li>
+            </span>
           ) : null}
         </ul>
         <div className='btn-container'>
