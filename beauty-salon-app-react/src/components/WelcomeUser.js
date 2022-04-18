@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import LogoutButton from './LogoutButton';
 
 const WelcomeUser = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -11,7 +12,8 @@ const WelcomeUser = () => {
   return (
     isAuthenticated && (
       <div className='welcome-msg'>
-        <p>Welcome, {user.name}!</p>
+        <span>Welcome, {user.name}!</span>
+        <LogoutButton />
       </div>
     )
   );

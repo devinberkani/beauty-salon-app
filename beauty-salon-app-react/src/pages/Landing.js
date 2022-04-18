@@ -15,9 +15,6 @@ const Landing = () => {
           </section>
           <section>
             <LoginButton />
-            {/* <Link to='dashboard'>
-              <button className='landing-page-btn'>Login/Register</button>
-            </Link> */}
           </section>
         </section>
       </section>

@@ -37,7 +37,7 @@ Variables
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
   --transition: all 0.3s linear;
-  --spacing: 0.05rem;
+  --spacing: 0.08rem;
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -141,28 +141,40 @@ Button Styles
 ===============
 */
 
-.btn-container {
-  display: inline-block;
-}
-
 .btn {
   text-transform: uppercase;
   background: #76b947;
   border: 2px solid #76b947;
   color: var(--clr-white);
-  font-weight: bold;
+  font-weight: 500;
   padding: 0.4rem 0.85rem;
   letter-spacing: var(--spacing);
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   cursor: pointer;
   box-shadow: var(--light-shadow);
   border-radius: var(--radius);
-  margin: 0.25rem;
+  margin: 0.1rem;
+}
+
+.edit-btn {
+  text-transform: uppercase;
+  background: var(--clr-white);
+  border: 2px solid #76b947;
+  color: #76b947;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-size: 0.65rem;
+  cursor: pointer;
+  box-shadow: var(--light-shadow);
+  border-radius: var(--radius);
+  margin: 0.1rem;
 }
 
 .bold {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 /*
@@ -210,11 +222,11 @@ Landing Page
   background: #76b947;
   border: 2px solid #76b947;
   color: var(--clr-white);
-  font-weight: bold;
+  font-weight: 500;
   padding: 0.4rem 0.85rem;
   letter-spacing: var(--spacing);
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   cursor: pointer;
   box-shadow: var(--dark-shadow);
   border-radius: var(--radius);
@@ -242,23 +254,28 @@ nav li {
 
 .logo {
   font-size: 2.5em;
-  font-weight: bold;
+  font-weight: 500;
 }
 
-.welcome-msg p {
+.welcome-msg span {
   color: var(--clr-white);
-  margin-bottom: 0.2rem;
+  margin-right: 0.5rem;
 }
 
-/*
-=============== 
-Welcome
-===============
-*/
-
-.welcome {
-  text-align: center;
-  margin: 2em;
+.logout-btn {
+  text-transform: uppercase;
+  background: #76b947;
+  border: 2px solid #76b947;
+  color: var(--clr-white);
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-size: 0.65rem;
+  cursor: pointer;
+  box-shadow: var(--light-shadow);
+  border-radius: var(--radius);
+  margin: 0.25rem;
 }
 
 /*
@@ -319,17 +336,14 @@ Client List Table
 
 .client-table {
   display: inline-block;
+  border-collapse: separate;
+  border-spacing: 0.25em;
 }
 
 th,
 td {
-  border: 1px solid var(--clr-grey-10);
-  padding-right: 0.5em;
-  padding-left: 0.5em;
-}
-
-th {
-  padding: 0.5em;
+  border: 1px solid var(--clr-grey-9);
+  padding: 0.25em;
 }
 
 /*

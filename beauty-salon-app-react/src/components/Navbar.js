@@ -11,7 +11,6 @@ const Navbar = () => {
             <li className='logo'>Client Manager</li>
           </div>
           <WelcomeUser />
-          <LogoutButton />
         </ul>
       </nav>
     </div>

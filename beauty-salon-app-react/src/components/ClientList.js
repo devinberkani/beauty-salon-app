@@ -45,7 +45,7 @@ const ClientList = () => {
                     View
                   </button>
                   <button
-                    className='btn'
+                    className='edit-btn'
                     onClick={() => openEditModal(client.id)}
                   >
                     Edit
