@@ -36,12 +36,7 @@ const ClientList = () => {
                 <td>{client.phone}</td>
                 <td>{client.address}</td>
                 <td>
-                  <button
-                    className='btn'
-                    onClick={openModal}
-                    id={client.id}
-                    name={client.name}
-                  >
+                  <button className='btn' onClick={() => openModal(client.id)}>
                     More Info
                   </button>
                 </td>

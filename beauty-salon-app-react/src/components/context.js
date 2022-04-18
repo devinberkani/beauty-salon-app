@@ -6,8 +6,24 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [showModal, setshowModal] = useState(false);
   const [user, setUser] = useState('');
+  const [userInfo, setUserInfo] = useState({
+    name: {
+      firstName: '',
+      lastName: '',
+    },
+    id: 0,
+    address: '',
+    phone: '',
+    email: '',
+    birthday: '',
+    hairColorInfo: '',
+  });
 
-  const openModal = () => {
+  const openModal = (id) => {
+    const newUserInfo = data.filter((item) => {
+      return item.id == id;
+    });
+    setUserInfo(newUserInfo[0]);
     setshowModal(true);
   };
 
@@ -23,6 +39,7 @@ const AppProvider = ({ children }) => {
         closeModal,
         user,
         setUser,
+        userInfo,
       }}
     >
       {children}
