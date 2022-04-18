@@ -3,17 +3,19 @@ import ClientList from './ClientList';
 import { useGlobalContext } from './context';
 
 const ClientSearch = () => {
-  const { user, setUser } = useGlobalContext();
+  const { clientSearch, setClientSearch } = useGlobalContext();
 
   return (
     <>
       <div className='client-search'>
-        <label className='client-search-label'>Search For Client</label>
+        <h2>Client Search</h2>
+        <label className='client-search-label'>Enter Name:</label>
         <input
           className='client-search-input'
           type='text'
-          value={user}
-          onChange={(e) => setUser(e.target.value)}
+          value={clientSearch}
+          placeholder='i.e. John Smith'
+          onChange={(e) => setClientSearch(e.target.value)}
         />
         <button className='btn'>Search</button>
       </div>

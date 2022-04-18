@@ -4,9 +4,14 @@ import data from '../data';
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [showModal, setshowModal] = useState(false);
-  const [user, setUser] = useState('');
-  const [userInfo, setUserInfo] = useState({
+  //modal for viewing a single client's info
+  const [showViewModal, setShowViewModal] = useState(false);
+  //modal for editing a single client's info
+  const [showEditModal, setShowEditModal] = useState(false);
+  //client being searched for in the input field
+  const [clientSearch, setClientSearch] = useState('');
+  //expanded client info displayed in modal
+  const [clientInfo, setClientInfo] = useState({
     name: {
       firstName: '',
       lastName: '',
@@ -19,27 +24,45 @@ const AppProvider = ({ children }) => {
     hairColorInfo: '',
   });
 
-  const openModal = (id) => {
-    const newUserInfo = data.filter((item) => {
+  const openViewModal = (id) => {
+    const newClientInfo = data.filter((item) => {
       return item.id == id;
     });
-    setUserInfo(newUserInfo[0]);
-    setshowModal(true);
+    setClientInfo(newClientInfo[0]);
+    setShowViewModal(true);
   };
 
-  const closeModal = () => {
-    setshowModal(false);
+  const closeViewModal = () => {
+    setShowViewModal(false);
+  };
+
+  const openEditModal = (id) => {
+    const newClientInfo = data.filter((item) => {
+      return item.id == id;
+    });
+    setClientInfo(newClientInfo[0]);
+    if (showViewModal) {
+      setShowViewModal(false);
+    }
+    setShowEditModal(true);
+  };
+
+  const closeEditModal = () => {
+    setShowEditModal(false);
   };
 
   return (
     <AppContext.Provider
       value={{
-        showModal,
-        openModal,
-        closeModal,
-        user,
-        setUser,
-        userInfo,
+        showViewModal,
+        openViewModal,
+        closeViewModal,
+        showEditModal,
+        openEditModal,
+        closeEditModal,
+        clientSearch,
+        setClientSearch,
+        clientInfo,
       }}
     >
       {children}

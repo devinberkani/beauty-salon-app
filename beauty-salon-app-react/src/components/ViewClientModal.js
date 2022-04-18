@@ -2,13 +2,15 @@ import React from 'react';
 import { useGlobalContext } from './context';
 import data from '../data';
 
-const SingleClientModal = ({}) => {
-  const { showModal, closeModal, userInfo } = useGlobalContext();
+const ViewClientModal = ({}) => {
+  const { showViewModal, closeViewModal, clientInfo, openEditModal } =
+    useGlobalContext();
 
-  const { name, id, phone, address, email, birthday, hairColorInfo } = userInfo;
+  const { name, id, phone, address, email, birthday, hairColorInfo } =
+    clientInfo;
 
   return (
-    <div className={`modal-overlay ${showModal && 'show-modal'}`}>
+    <div className={`modal-overlay ${showViewModal && 'show-modal'}`}>
       <div className='modal-container'>
         <h2>Client Info</h2>
         <ul>
@@ -34,12 +36,17 @@ const SingleClientModal = ({}) => {
             </li>
           ) : null}
         </ul>
-        <button className='btn' onClick={closeModal}>
-          Close
-        </button>
+        <div className='btn-container'>
+          <button className='btn' onClick={closeViewModal}>
+            Close
+          </button>
+          <button className='btn' onClick={() => openEditModal(id)}>
+            Edit
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default SingleClientModal;
+export default ViewClientModal;

@@ -1,10 +1,10 @@
 import React from 'react';
 import data from '../data';
 import { useGlobalContext } from './context';
-import SingleClientModal from './SingleClientModal';
+import ViewClientModal from './ViewClientModal';
 
 const ClientList = () => {
-  const { openModal, user } = useGlobalContext();
+  const { openViewModal, openEditModal, clientSearch } = useGlobalContext();
 
   return (
     <div>
@@ -14,7 +14,8 @@ const ClientList = () => {
           <tr>
             <th>Name</th>
             <th>Phone</th>
-            <th>Address</th>
+            <th>Hair Color Info</th>
+            <th>View/Edit Client</th>
           </tr>
         </thead>
         <tbody>
@@ -25,7 +26,7 @@ const ClientList = () => {
                 client.name.firstName.toLowerCase() +
                 ' ' +
                 client.name.lastName.toLowerCase()
-              ).includes(user)
+              ).includes(clientSearch)
             )
             //display data in table
             .map((client) => (
@@ -34,10 +35,20 @@ const ClientList = () => {
                   {client.name.firstName} {client.name.lastName}
                 </td>
                 <td>{client.phone}</td>
-                <td>{client.address}</td>
+                {/* only show if client has hair color info */}
+                <td>{client.hairColorInfo ? client.hairColorInfo : 'None'}</td>
                 <td>
-                  <button className='btn' onClick={() => openModal(client.id)}>
-                    More Info
+                  <button
+                    className='btn'
+                    onClick={() => openViewModal(client.id)}
+                  >
+                    View
+                  </button>
+                  <button
+                    className='btn'
+                    onClick={() => openEditModal(client.id)}
+                  >
+                    Edit
                   </button>
                 </td>
               </tr>
