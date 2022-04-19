@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import data from '../data';
 
 const AppContext = React.createContext();
@@ -51,6 +51,21 @@ const AppProvider = ({ children }) => {
     setShowEditModal(false);
   };
 
+  //Logic for filtering Client Events
+
+  const withinThirtyDays = (date) => {
+    // now
+    const today = new Date();
+    //convert to ms dates
+    const todaysDate = Date.parse(today);
+    const varDate = Date.parse(date);
+    //milliseconds between the two dates
+    const msBetweenDates = varDate - todaysDate;
+    //convert ms to days                     hour   min  sec   ms
+    const daysBetweenDates = msBetweenDates / (24 * 60 * 60 * 1000);
+    return daysBetweenDates;
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -63,6 +78,7 @@ const AppProvider = ({ children }) => {
         clientSearch,
         setClientSearch,
         clientInfo,
+        withinThirtyDays,
       }}
     >
       {children}

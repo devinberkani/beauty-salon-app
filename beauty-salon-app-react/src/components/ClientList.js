@@ -9,6 +9,7 @@ const ClientList = () => {
   return (
     <div>
       <h2>Client List</h2>
+      <button className='btn add-new-btn'>Add New Client</button>
       <table className='client-table'>
         <thead>
           <tr>

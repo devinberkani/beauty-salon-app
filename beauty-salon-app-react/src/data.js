@@ -11,8 +11,8 @@ const data = [
     birthday: 'January 8',
     hairColorInfo: '',
     clientEvent: {
-      event: 'client event',
-      date: 'April 28',
+      event: "John Smith's wedding",
+      date: 'May 02 2022',
     },
   },
   {
@@ -27,8 +27,8 @@ const data = [
     birthday: 'March 28',
     hairColorInfo: 'R69 Red',
     clientEvent: {
-      event: 'client event',
-      date: 'April 28',
+      event: "Sally's divorced finalized",
+      date: 'May 14 2022',
     },
   },
   {
@@ -43,8 +43,8 @@ const data = [
     birthday: 'March 28',
     hairColorInfo: 'B27 Brown',
     clientEvent: {
-      event: 'client event',
-      date: 'April 28',
+      event: "Jill's parrot's funeral",
+      date: 'May 15 2022',
     },
   },
   {
@@ -59,8 +59,8 @@ const data = [
     birthday: 'July 7',
     hairColorInfo: '',
     clientEvent: {
-      event: 'client event',
-      date: 'April 28',
+      event: "Bill's cat is definitely going to die",
+      date: 'Apr 28 2022',
     },
   },
 ];
